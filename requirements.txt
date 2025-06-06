@@ -6,3 +6,4 @@ torchvision
 matplotlib
 kagglehub
 tqdm
+seaborn
