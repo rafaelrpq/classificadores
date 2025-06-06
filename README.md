@@ -10,6 +10,12 @@ Obs.: Cada método alternativo será composto de um extrator de características
 - Selecionar a configuração ideal com base nos resultados de validação. 
 
 ```mermaid
+---
+config:
+  theme: default
+  look: neo
+  layout: dagre
+---
 flowchart TD
     A(("Start")) --> B["Setup Device"]
     B --> C["Define Hyperparameters"]
@@ -27,9 +33,9 @@ flowchart TD
     M --> N["Start K-Fold Cross-Validation on Training Data"]
     N --> O{"For Each Extractor"}
     O --> P{"For Each Fold"} & Y["Analyze K-Fold Results"]
-    P --> Q["Split Data into Train/Validation for Fold"] & O
-    Q --> R{"For Each Classifier"} & P
-    R --> S{"For Each Hyperparameter Combination"} & Q
+    P --> Q["Split Data into Train/Validation for Fold"] 
+    Q --> R{"For Each Classifier"} 
+    R --> S{"For Each Hyperparameter Combination"} & P
     S --> T["Initialize Classifier with Params"] & R
     T --> U["Train Classifier on Fold Train Data"]
     U --> V["Predict on Fold Validation Data"]
@@ -42,7 +48,7 @@ flowchart TD
     BB --> CC{"For Each Classifier"} & LL["Display All Final Test Results"]
     CC --> DD["Retrieve Best Params from K-Fold"] & BB
     DD --> EE{"Are Best Params Valid?"}
-    EE -- No --> FF["Skip Final Test for this Classifier"]
+    EE -- No --> FF["Skip Final Test for this Classifier"] 
     EE -- Yes --> GG["Initialize Classifier with Best Params"]
     GG --> HH["Train Classifier on Full Train Data"]
     HH --> II["Predict on Full Test Data"]
