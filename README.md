@@ -22,7 +22,7 @@ flowchart TD
     C --> D["Define Image Transformations"]
     D --> E[("Download Dataset")]
     E --> F{"Check for Test Directory?"}
-    F -- No --> G>"Split Train Directory into Train 0.8 Test 0.2"]
+    F -- No --> G["Split Train Directory into Train 0.8 Test 0.2"]
     F -- Yes --> H["Load Train and Test Datasets"]
     G --> I["Initialize DataLoaders for Full Train and Test"]
     H --> I
