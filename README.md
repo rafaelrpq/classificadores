@@ -20,6 +20,7 @@ Sugestão: Ler o capítulo 10 do livro "Inteligência Aritifical: uma abordagem 
 - Os arquivos `analisador.py` e `analisador.ipynb` tem o mesmo script. A diferença entre eles é que um foi *portado* para executar no Google Colab de forma a aproveitar melhor os recursos da plataforma a fim de acelerar a execução do código.
 - O arquivo results.txt contem o histório das analises geradas pelos modelos ViT e a comparação entre o script proposto em relação ao modelo do estado-da-arte
 
+```mermaid
 graph TD
     A[Start] --> B{Setup Device};
     B --> C[Define Hyperparameters];
@@ -71,3 +72,4 @@ graph TD
     BB --> LL[Display All Final Test Results];
     LL --> MM[Identify and Display Overall Best Result];
     MM --> NNN[End];
+```
