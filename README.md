@@ -80,10 +80,10 @@ graph TD
     M --> N[Identificar Melhor Modelo Geral];
     N --> O[Salvar Relatório Detalhado];
 
-    classDef dataset fill:#f9f,stroke:#333,stroke-width:2px;
-    classDef process fill:#9cf,stroke:#333,stroke-width:2px;
-    classDef decision fill:#ff9,stroke:#333,stroke-width:2px;
-    classDef output fill:#9f9,stroke:#333,stroke-width:2px;
+    classDef dataset fill:#933,stroke:#333,stroke-width:2px;
+    classDef process fill:#c3c,stroke:#333,stroke-width:2px;
+    classDef decision fill:#339,stroke:#333,stroke-width:2px;
+    classDef output fill:#99f,stroke:#333,stroke-width:2px;
 
     class A,B,C,E dataset;
     class D,F,G,H,K,L,M,N,O process;
