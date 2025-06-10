@@ -58,3 +58,34 @@ flowchart TD
     LL --> MM["Identify and Display Overall Best Result"]
     MM --> NNN(("End"))
 ```
+
+```mermaid
+graph TD
+    A[Dataset de Imagens (CTCB)] --> B{Carregar e Dividir Dataset};
+    B --> C[Transformações de Imagem];
+    C --> D{Extratores ViT (DINO, ViT-Base, ViT-Large)};
+    D --> E[Extrair Features (X_train_full, y_train_full, X_test_full, y_test_full)];
+
+    subgraph "Otimização e Treinamento"
+        E --> F{Validação Cruzada K-Fold em X_train_full};
+        F -- Para cada (Extrator, Classificador, Hiperparâmetro) --> G[Treinar Classificador no Fold de Treino];
+        G --> H[Validar no Fold de Validação];
+        H --> I[Calcular Métricas (Acurácia Balanceada)];
+        I --> J{Selecionar Melhores Hiperparâmetros por (Extrator, Classificador)};
+    end
+
+    J --> K[Treinar Classificador Final com Melhores Hiperparâmetros em X_train_full completo];
+    K --> L[Avaliar no Conjunto de Teste (X_test_full, y_test_full)];
+    L --> M[Gerar Métricas Finais, Matriz de Confusão, TP/TN/FP/FN];
+    M --> N[Identificar Melhor Modelo Geral];
+    N --> O[Salvar Relatório Detalhado];
+
+    classDef dataset fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#9cf,stroke:#333,stroke-width:2px;
+    classDef decision fill:#ff9,stroke:#333,stroke-width:2px;
+    classDef output fill:#9f9,stroke:#333,stroke-width:2px;
+
+    class A,B,C,E dataset;
+    class D,F,G,H,K,L,M,N,O process;
+    class I,J decision;
+```
