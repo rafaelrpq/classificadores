@@ -60,7 +60,7 @@ flowchart TD
 ```
 
 ```mermaid
-graph TD
+graph LR
     A[Dataset de Imagens CTCB] --> B{Carregar e Dividir Dataset};
     B --> C[Transformações de Imagem];
     C --> D{Extratores ViT DINO, ViT-Base, ViT-Large};
