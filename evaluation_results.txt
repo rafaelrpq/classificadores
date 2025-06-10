@@ -1,0 +1,662 @@
+================================================================================
+      VIZ + Traditional Classifier Evaluation Results
+================================================================================
+
+============================================================
+--- K-Fold Cross-Validation Summary (Best Params per Combo) ---
+============================================================
+
+Extractor: DINO
+Classifier: SVM
+  Selected Params: {'C': 10}
+  Avg balanced_accuracy: 0.9022
+  Avg Metrics (Macro): Precision=0.9389, Recall=0.9022, F1=0.9113
+  Avg Metrics (Weighted): Precision=0.9612, Recall=0.9590, F1=0.9582
+  Avg Accuracy: 0.9590, Avg Balanced Accuracy: 0.9022
+------------------------------
+Extractor: DINO
+Classifier: KNN
+  Selected Params: {'n_neighbors': 1}
+  Avg balanced_accuracy: 0.8931
+  Avg Metrics (Macro): Precision=0.9170, Recall=0.8931, F1=0.8974
+  Avg Metrics (Weighted): Precision=0.9505, Recall=0.9489, F1=0.9482
+  Avg Accuracy: 0.9489, Avg Balanced Accuracy: 0.8931
+------------------------------
+Extractor: DINO
+Classifier: MLP
+  Selected Params: {'hidden_layer_sizes': (100, 100), 'max_iter': 200, 'random_state': 42}
+  Avg balanced_accuracy: 0.8761
+  Avg Metrics (Macro): Precision=0.8853, Recall=0.8761, F1=0.8749
+  Avg Metrics (Weighted): Precision=0.9491, Recall=0.9489, F1=0.9478
+  Avg Accuracy: 0.9489, Avg Balanced Accuracy: 0.8761
+------------------------------
+Extractor: ViT-Large
+Classifier: MLP
+  Selected Params: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
+  Avg balanced_accuracy: 0.8657
+  Avg Metrics (Macro): Precision=0.9079, Recall=0.8657, F1=0.8760
+  Avg Metrics (Weighted): Precision=0.9413, Recall=0.9397, F1=0.9389
+  Avg Accuracy: 0.9397, Avg Balanced Accuracy: 0.8657
+------------------------------
+Extractor: ViT-Base
+Classifier: KNN
+  Selected Params: {'n_neighbors': 1}
+  Avg balanced_accuracy: 0.8330
+  Avg Metrics (Macro): Precision=0.8101, Recall=0.8161, F1=0.7986
+  Avg Metrics (Weighted): Precision=0.9198, Recall=0.9185, F1=0.9167
+  Avg Accuracy: 0.9185, Avg Balanced Accuracy: 0.8330
+------------------------------
+Extractor: ViT-Base
+Classifier: MLP
+  Selected Params: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
+  Avg balanced_accuracy: 0.8276
+  Avg Metrics (Macro): Precision=0.8593, Recall=0.8276, F1=0.8362
+  Avg Metrics (Weighted): Precision=0.9314, Recall=0.9310, F1=0.9297
+  Avg Accuracy: 0.9310, Avg Balanced Accuracy: 0.8276
+------------------------------
+Extractor: ViT-Base
+Classifier: SVM
+  Selected Params: {'C': 100}
+  Avg balanced_accuracy: 0.8125
+  Avg Metrics (Macro): Precision=0.8883, Recall=0.8125, F1=0.8351
+  Avg Metrics (Weighted): Precision=0.9399, Recall=0.9382, F1=0.9363
+  Avg Accuracy: 0.9382, Avg Balanced Accuracy: 0.8125
+------------------------------
+Extractor: ViT-Large
+Classifier: SVM
+  Selected Params: {'C': 100}
+  Avg balanced_accuracy: 0.8110
+  Avg Metrics (Macro): Precision=0.8605, Recall=0.8110, F1=0.8252
+  Avg Metrics (Weighted): Precision=0.9418, Recall=0.9431, F1=0.9401
+  Avg Accuracy: 0.9431, Avg Balanced Accuracy: 0.8110
+------------------------------
+Extractor: ViT-Large
+Classifier: KNN
+  Selected Params: {'n_neighbors': 1}
+  Avg balanced_accuracy: 0.7958
+  Avg Metrics (Macro): Precision=0.8296, Recall=0.7958, F1=0.7947
+  Avg Metrics (Weighted): Precision=0.9240, Recall=0.9228, F1=0.9202
+  Avg Accuracy: 0.9228, Avg Balanced Accuracy: 0.7958
+------------------------------
+Extractor: DINO
+Classifier: RandomForest
+  Selected Params: {'n_estimators': 50, 'random_state': 42}
+  Avg balanced_accuracy: 0.6549
+  Avg Metrics (Macro): Precision=0.7907, Recall=0.6549, F1=0.6856
+  Avg Metrics (Weighted): Precision=0.8773, Recall=0.8712, F1=0.8619
+  Avg Accuracy: 0.8712, Avg Balanced Accuracy: 0.6549
+------------------------------
+Extractor: ViT-Base
+Classifier: RandomForest
+  Selected Params: {'n_estimators': 200, 'random_state': 42}
+  Avg balanced_accuracy: 0.5530
+  Avg Metrics (Macro): Precision=0.6656, Recall=0.5530, F1=0.5732
+  Avg Metrics (Weighted): Precision=0.8367, Recall=0.8370, F1=0.8209
+  Avg Accuracy: 0.8370, Avg Balanced Accuracy: 0.5530
+------------------------------
+Extractor: ViT-Large
+Classifier: RandomForest
+  Selected Params: {'n_estimators': 100, 'random_state': 42}
+  Avg balanced_accuracy: 0.5322
+  Avg Metrics (Macro): Precision=0.5806, Recall=0.5322, F1=0.5370
+  Avg Metrics (Weighted): Precision=0.8255, Recall=0.8355, F1=0.8170
+  Avg Accuracy: 0.8355, Avg Balanced Accuracy: 0.5322
+------------------------------
+
+============================================================
+--- Final Evaluation Results on Test Set ---
+============================================================
+
+Result 1:
+  Extractor: DINO
+  Classifier: SVM
+  Parameters: {'C': 10}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9749
+    Balanced Accuracy: 0.8234
+    Precision (macro): 0.8217
+    Recall (macro): 0.8234
+    F1-Score (macro): 0.8193
+    Precision (weighted): 0.9725
+    Recall (weighted): 0.9749
+    F1-Score (weighted): 0.9733
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 54,   0,   0,   2,   0,   0,   0,   0,   0,   0],
+ [  1,   3,   0,   0,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   1,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   0,  33,   0,   0,   0,   0,   0,   0],
+ [  1,   0,   0,   0, 234,   0,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   0,  29,   3,   0,   0],
+ [  0,   0,   0,   0,   0,   0,   2,  58,   1,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   0,   0]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=54, TN=460, FP=2, FN=2
+    Aphanizomenon: TP=3, TN=514, FP=0, FN=1
+    Cylindrospermopsis: TP=2, TN=513, FP=2, FN=1
+    Dolichospermum: TP=33, TN=482, FP=3, FN=0
+    Microcystis: TP=234, TN=283, FP=0, FN=1
+    Nostoc: TP=73, TN=445, FP=0, FN=0
+    Oscillatoria: TP=29, TN=484, FP=2, FN=3
+    Phormidium: TP=58, TN=454, FP=3, FN=3
+    Planktothrix: TP=19, TN=498, FP=1, FN=0
+    Raphidiopsis: TP=0, TN=516, FP=0, FN=2
+----------------------------------------
+
+Result 2:
+  Extractor: DINO
+  Classifier: MLP
+  Parameters: {'hidden_layer_sizes': (100, 100), 'max_iter': 200, 'random_state': 42}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9595
+    Balanced Accuracy: 0.8097
+    Precision (macro): 0.8069
+    Recall (macro): 0.8097
+    F1-Score (macro): 0.8049
+    Precision (weighted): 0.9570
+    Recall (weighted): 0.9595
+    F1-Score (weighted): 0.9577
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 52,   0,   0,   1,   2,   1,   0,   0,   0,   0],
+ [  1,   3,   0,   0,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   1,   0],
+ [  0,   0,   0,  33,   0,   0,   0,   0,   0,   0],
+ [  1,   0,   0,   0, 233,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   1,  28,   3,   0,   0],
+ [  1,   0,   0,   0,   0,   0,   5,  54,   1,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   0,   0]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=52, TN=459, FP=3, FN=4
+    Aphanizomenon: TP=3, TN=514, FP=0, FN=1
+    Cylindrospermopsis: TP=2, TN=513, FP=2, FN=1
+    Dolichospermum: TP=33, TN=484, FP=1, FN=0
+    Microcystis: TP=233, TN=281, FP=2, FN=2
+    Nostoc: TP=73, TN=442, FP=3, FN=0
+    Oscillatoria: TP=28, TN=481, FP=5, FN=4
+    Phormidium: TP=54, TN=454, FP=3, FN=7
+    Planktothrix: TP=19, TN=497, FP=2, FN=0
+    Raphidiopsis: TP=0, TN=516, FP=0, FN=2
+----------------------------------------
+
+Result 3:
+  Extractor: DINO
+  Classifier: RandomForest
+  Parameters: {'n_estimators': 50, 'random_state': 42}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.8996
+    Balanced Accuracy: 0.6598
+    Precision (macro): 0.7114
+    Recall (macro): 0.6598
+    F1-Score (macro): 0.6797
+    Precision (weighted): 0.8920
+    Recall (weighted): 0.8996
+    F1-Score (weighted): 0.8940
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 49,   0,   0,   0,   3,   3,   0,   1,   0,   0],
+ [  2,   0,   0,   1,   0,   0,   0,   1,   0,   0],
+ [  0,   0,   2,   1,   0,   0,   0,   0,   0,   0],
+ [  3,   0,   0,  25,   1,   3,   0,   1,   0,   0],
+ [  4,   0,   0,   0, 230,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   2,  70,   0,   1,   0,   0],
+ [  0,   0,   0,   0,   0,   1,  23,   8,   0,   0],
+ [  2,   0,   0,   0,   0,   2,   5,  52,   0,   0],
+ [  0,   0,   0,   1,   0,   0,   1,   2,  15,   0],
+ [  2,   0,   0,   0,   0,   0,   0,   0,   0,   0]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=49, TN=449, FP=13, FN=7
+    Aphanizomenon: TP=0, TN=514, FP=0, FN=4
+    Cylindrospermopsis: TP=2, TN=515, FP=0, FN=1
+    Dolichospermum: TP=25, TN=482, FP=3, FN=8
+    Microcystis: TP=230, TN=277, FP=6, FN=5
+    Nostoc: TP=70, TN=435, FP=10, FN=3
+    Oscillatoria: TP=23, TN=480, FP=6, FN=9
+    Phormidium: TP=52, TN=443, FP=14, FN=9
+    Planktothrix: TP=15, TN=499, FP=0, FN=4
+    Raphidiopsis: TP=0, TN=516, FP=0, FN=2
+----------------------------------------
+
+Result 4:
+  Extractor: DINO
+  Classifier: KNN
+  Parameters: {'n_neighbors': 1}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9691
+    Balanced Accuracy: 0.9134
+    Precision (macro): 0.9316
+    Recall (macro): 0.9134
+    F1-Score (macro): 0.9135
+    Precision (weighted): 0.9704
+    Recall (weighted): 0.9691
+    F1-Score (weighted): 0.9689
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 49,   0,   0,   2,   2,   0,   0,   2,   0,   1],
+ [  0,   3,   0,   1,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   1,   0,   0,   0,   0,   0,   0],
+ [  2,   0,   0,  31,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   0,   0, 235,   0,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   0,  31,   1,   0,   0],
+ [  1,   0,   0,   1,   0,   0,   0,  57,   2,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,   0,   2]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=49, TN=459, FP=3, FN=7
+    Aphanizomenon: TP=3, TN=514, FP=0, FN=1
+    Cylindrospermopsis: TP=2, TN=515, FP=0, FN=1
+    Dolichospermum: TP=31, TN=480, FP=5, FN=2
+    Microcystis: TP=235, TN=281, FP=2, FN=0
+    Nostoc: TP=73, TN=445, FP=0, FN=0
+    Oscillatoria: TP=31, TN=486, FP=0, FN=1
+    Phormidium: TP=57, TN=454, FP=3, FN=4
+    Planktothrix: TP=19, TN=497, FP=2, FN=0
+    Raphidiopsis: TP=2, TN=515, FP=1, FN=0
+----------------------------------------
+
+Result 5:
+  Extractor: ViT-Base
+  Classifier: SVM
+  Parameters: {'C': 100}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9479
+    Balanced Accuracy: 0.7945
+    Precision (macro): 0.8883
+    Recall (macro): 0.7945
+    F1-Score (macro): 0.8240
+    Precision (weighted): 0.9476
+    Recall (weighted): 0.9479
+    F1-Score (weighted): 0.9461
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 51,   0,   0,   1,   3,   1,   0,   0,   0,   0],
+ [  2,   1,   0,   1,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   1,   0],
+ [  1,   1,   0,  30,   0,   0,   0,   0,   1,   0],
+ [  0,   0,   0,   0, 234,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   2,  27,   3,   0,   0],
+ [  1,   0,   0,   1,   0,   0,   3,  53,   3,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   0,   1,   0,   0,   0,   0,   0,   1]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=51, TN=458, FP=4, FN=5
+    Aphanizomenon: TP=1, TN=513, FP=1, FN=3
+    Cylindrospermopsis: TP=2, TN=515, FP=0, FN=1
+    Dolichospermum: TP=30, TN=481, FP=4, FN=3
+    Microcystis: TP=234, TN=280, FP=3, FN=1
+    Nostoc: TP=73, TN=441, FP=4, FN=0
+    Oscillatoria: TP=27, TN=483, FP=3, FN=5
+    Phormidium: TP=53, TN=454, FP=3, FN=8
+    Planktothrix: TP=19, TN=494, FP=5, FN=0
+    Raphidiopsis: TP=1, TN=516, FP=0, FN=1
+----------------------------------------
+
+Result 6:
+  Extractor: ViT-Base
+  Classifier: MLP
+  Parameters: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9382
+    Balanced Accuracy: 0.8372
+    Precision (macro): 0.7984
+    Recall (macro): 0.8372
+    F1-Score (macro): 0.8064
+    Precision (weighted): 0.9407
+    Recall (weighted): 0.9382
+    F1-Score (weighted): 0.9373
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 47,   0,   1,   2,   4,   1,   0,   1,   0,   0],
+ [  1,   1,   1,   0,   0,   0,   0,   0,   0,   1],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   1,   0],
+ [  0,   1,   0,  31,   0,   0,   1,   0,   0,   0],
+ [  0,   0,   0,   0, 234,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   1,   0,  72,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   1,  28,   3,   0,   0],
+ [  0,   0,   0,   1,   0,   0,   5,  50,   5,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,   0,   2]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=47, TN=461, FP=1, FN=9
+    Aphanizomenon: TP=1, TN=513, FP=1, FN=3
+    Cylindrospermopsis: TP=2, TN=513, FP=2, FN=1
+    Dolichospermum: TP=31, TN=481, FP=4, FN=2
+    Microcystis: TP=234, TN=279, FP=4, FN=1
+    Nostoc: TP=72, TN=442, FP=3, FN=1
+    Oscillatoria: TP=28, TN=480, FP=6, FN=4
+    Phormidium: TP=50, TN=453, FP=4, FN=11
+    Planktothrix: TP=19, TN=493, FP=6, FN=0
+    Raphidiopsis: TP=2, TN=515, FP=1, FN=0
+----------------------------------------
+
+Result 7:
+  Extractor: ViT-Base
+  Classifier: RandomForest
+  Parameters: {'n_estimators': 200, 'random_state': 42}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.8822
+    Balanced Accuracy: 0.5699
+    Precision (macro): 0.5980
+    Recall (macro): 0.5699
+    F1-Score (macro): 0.5788
+    Precision (weighted): 0.8687
+    Recall (weighted): 0.8822
+    F1-Score (weighted): 0.8718
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 45,   0,   0,   1,   6,   1,   0,   3,   0,   0],
+ [  3,   0,   0,   0,   1,   0,   0,   0,   0,   0],
+ [  2,   0,   0,   0,   0,   0,   0,   1,   0,   0],
+ [  5,   0,   0,  20,   3,   3,   0,   0,   2,   0],
+ [  0,   0,   0,   0, 233,   2,   0,   0,   0,   0],
+ [  1,   0,   0,   0,   2,  69,   0,   1,   0,   0],
+ [  2,   0,   0,   0,   0,   1,  20,   9,   0,   0],
+ [  3,   0,   0,   0,   1,   0,   3,  54,   0,   0],
+ [  2,   0,   0,   0,   0,   0,   0,   1,  16,   0],
+ [  0,   0,   0,   2,   0,   0,   0,   0,   0,   0]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=45, TN=444, FP=18, FN=11
+    Aphanizomenon: TP=0, TN=514, FP=0, FN=4
+    Cylindrospermopsis: TP=0, TN=515, FP=0, FN=3
+    Dolichospermum: TP=20, TN=482, FP=3, FN=13
+    Microcystis: TP=233, TN=270, FP=13, FN=2
+    Nostoc: TP=69, TN=438, FP=7, FN=4
+    Oscillatoria: TP=20, TN=483, FP=3, FN=12
+    Phormidium: TP=54, TN=442, FP=15, FN=7
+    Planktothrix: TP=16, TN=497, FP=2, FN=3
+    Raphidiopsis: TP=0, TN=516, FP=0, FN=2
+----------------------------------------
+
+Result 8:
+  Extractor: ViT-Base
+  Classifier: KNN
+  Parameters: {'n_neighbors': 1}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9459
+    Balanced Accuracy: 0.7981
+    Precision (macro): 0.8229
+    Recall (macro): 0.7981
+    F1-Score (macro): 0.8043
+    Precision (weighted): 0.9472
+    Recall (weighted): 0.9459
+    F1-Score (weighted): 0.9450
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 47,   2,   0,   2,   1,   2,   0,   0,   1,   1],
+ [  2,   1,   0,   1,   0,   0,   0,   0,   0,   0],
+ [  1,   0,   2,   0,   0,   0,   0,   0,   0,   0],
+ [  1,   0,   0,  31,   0,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   0, 234,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   0,  30,   2,   0,   0],
+ [  1,   0,   0,   0,   0,   2,   2,  52,   4,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,   1,   1]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=47, TN=457, FP=5, FN=9
+    Aphanizomenon: TP=1, TN=512, FP=2, FN=3
+    Cylindrospermopsis: TP=2, TN=515, FP=0, FN=1
+    Dolichospermum: TP=31, TN=482, FP=3, FN=2
+    Microcystis: TP=234, TN=282, FP=1, FN=1
+    Nostoc: TP=73, TN=439, FP=6, FN=0
+    Oscillatoria: TP=30, TN=484, FP=2, FN=2
+    Phormidium: TP=52, TN=455, FP=2, FN=9
+    Planktothrix: TP=19, TN=493, FP=6, FN=0
+    Raphidiopsis: TP=1, TN=515, FP=1, FN=1
+----------------------------------------
+
+Result 9:
+  Extractor: ViT-Large
+  Classifier: SVM
+  Parameters: {'C': 100}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9537
+    Balanced Accuracy: 0.7540
+    Precision (macro): 0.7644
+    Recall (macro): 0.7540
+    F1-Score (macro): 0.7547
+    Precision (weighted): 0.9487
+    Recall (weighted): 0.9537
+    F1-Score (weighted): 0.9507
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 53,   0,   0,   2,   1,   0,   0,   0,   0,   0],
+ [  1,   1,   0,   2,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   1,   0],
+ [  1,   1,   0,  30,   1,   0,   0,   0,   0,   0],
+ [  1,   0,   0,   0, 233,   1,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   0,  28,   4,   0,   0],
+ [  1,   0,   0,   1,   0,   0,   4,  55,   0,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   1,   0,   0,   0,   0,   0,   1,   0]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=53, TN=458, FP=4, FN=3
+    Aphanizomenon: TP=1, TN=513, FP=1, FN=3
+    Cylindrospermopsis: TP=2, TN=514, FP=1, FN=1
+    Dolichospermum: TP=30, TN=480, FP=5, FN=3
+    Microcystis: TP=233, TN=281, FP=2, FN=2
+    Nostoc: TP=73, TN=444, FP=1, FN=0
+    Oscillatoria: TP=28, TN=482, FP=4, FN=4
+    Phormidium: TP=55, TN=453, FP=4, FN=6
+    Planktothrix: TP=19, TN=497, FP=2, FN=0
+    Raphidiopsis: TP=0, TN=516, FP=0, FN=2
+----------------------------------------
+
+Result 10:
+  Extractor: ViT-Large
+  Classifier: MLP
+  Parameters: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9402
+    Balanced Accuracy: 0.7902
+    Precision (macro): 0.8248
+    Recall (macro): 0.7902
+    F1-Score (macro): 0.7906
+    Precision (weighted): 0.9415
+    Recall (weighted): 0.9402
+    F1-Score (weighted): 0.9395
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 53,   0,   0,   2,   1,   0,   0,   0,   0,   0],
+ [  0,   1,   1,   2,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   1,   0],
+ [  2,   1,   0,  29,   1,   0,   0,   0,   0,   0],
+ [  3,   0,   0,   0, 230,   1,   0,   1,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   1,  26,   4,   1,   0],
+ [  1,   0,   1,   0,   0,   0,   4,  53,   2,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   1,   0,   0,   0,   0,   0,   0,   1]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=53, TN=456, FP=6, FN=3
+    Aphanizomenon: TP=1, TN=513, FP=1, FN=3
+    Cylindrospermopsis: TP=2, TN=512, FP=3, FN=1
+    Dolichospermum: TP=29, TN=481, FP=4, FN=4
+    Microcystis: TP=230, TN=281, FP=2, FN=5
+    Nostoc: TP=73, TN=443, FP=2, FN=0
+    Oscillatoria: TP=26, TN=482, FP=4, FN=6
+    Phormidium: TP=53, TN=452, FP=5, FN=8
+    Planktothrix: TP=19, TN=495, FP=4, FN=0
+    Raphidiopsis: TP=1, TN=516, FP=0, FN=1
+----------------------------------------
+
+Result 11:
+  Extractor: ViT-Large
+  Classifier: RandomForest
+  Parameters: {'n_estimators': 100, 'random_state': 42}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.8784
+    Balanced Accuracy: 0.5611
+    Precision (macro): 0.5993
+    Recall (macro): 0.5611
+    F1-Score (macro): 0.5698
+    Precision (weighted): 0.8689
+    Recall (weighted): 0.8784
+    F1-Score (weighted): 0.8664
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 49,   0,   0,   0,   5,   1,   0,   1,   0,   0],
+ [  1,   0,   0,   1,   2,   0,   0,   0,   0,   0],
+ [  2,   0,   0,   0,   0,   0,   0,   1,   0,   0],
+ [  8,   0,   0,  16,   3,   5,   0,   0,   1,   0],
+ [  3,   0,   0,   0, 232,   0,   0,   0,   0,   0],
+ [  1,   0,   0,   0,   1,  70,   0,   1,   0,   0],
+ [  2,   0,   0,   0,   0,   1,  19,  10,   0,   0],
+ [  2,   0,   0,   0,   0,   1,   5,  53,   0,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   3,  16,   0],
+ [  1,   0,   0,   0,   0,   0,   0,   1,   0,   0]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=49, TN=442, FP=20, FN=7
+    Aphanizomenon: TP=0, TN=514, FP=0, FN=4
+    Cylindrospermopsis: TP=0, TN=515, FP=0, FN=3
+    Dolichospermum: TP=16, TN=484, FP=1, FN=17
+    Microcystis: TP=232, TN=272, FP=11, FN=3
+    Nostoc: TP=70, TN=437, FP=8, FN=3
+    Oscillatoria: TP=19, TN=481, FP=5, FN=13
+    Phormidium: TP=53, TN=440, FP=17, FN=8
+    Planktothrix: TP=16, TN=498, FP=1, FN=3
+    Raphidiopsis: TP=0, TN=516, FP=0, FN=2
+----------------------------------------
+
+Result 12:
+  Extractor: ViT-Large
+  Classifier: KNN
+  Parameters: {'n_neighbors': 1}
+  Status: Success
+  Metrics on Test Set:
+    Accuracy: 0.9575
+    Balanced Accuracy: 0.8041
+    Precision (macro): 0.8675
+    Recall (macro): 0.8041
+    F1-Score (macro): 0.8218
+    Precision (weighted): 0.9575
+    Recall (weighted): 0.9575
+    F1-Score (weighted): 0.9561
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 50,   0,   0,   1,   2,   0,   1,   2,   0,   0],
+ [  0,   1,   1,   2,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   0,   0,   0,   0,   0,   1,   0],
+ [  1,   1,   0,  29,   0,   1,   0,   0,   1,   0],
+ [  0,   0,   0,   0, 234,   0,   1,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   0,  29,   3,   0,   0],
+ [  0,   0,   0,   0,   1,   0,   0,  58,   2,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,   1,   1]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plots are generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=50, TN=461, FP=1, FN=6
+    Aphanizomenon: TP=1, TN=513, FP=1, FN=3
+    Cylindrospermopsis: TP=2, TN=514, FP=1, FN=1
+    Dolichospermum: TP=29, TN=482, FP=3, FN=4
+    Microcystis: TP=234, TN=280, FP=3, FN=1
+    Nostoc: TP=73, TN=444, FP=1, FN=0
+    Oscillatoria: TP=29, TN=484, FP=2, FN=3
+    Phormidium: TP=58, TN=452, FP=5, FN=3
+    Planktothrix: TP=19, TN=494, FP=5, FN=0
+    Raphidiopsis: TP=1, TN=516, FP=0, FN=1
+----------------------------------------
+
+============================================================
+--- Overall Best Result on Test Set (by Balanced Accuracy) ---
+============================================================
+
+Overall Best Model configuration based on Test Set Balanced Accuracy (0.9134):
+------------------------------------------------------------
+Extractor: DINO
+Classifier: KNN
+Parameters (Selected by K-Fold): {'n_neighbors': 1}
+------------------------------------------------------------
+Metrics on Test Set for the Best Model:
+  Accuracy: 0.9691
+  Balanced Accuracy: 0.9134
+  Precision (macro): 0.9316
+  Recall (macro): 0.9134
+  F1-Score (macro): 0.9135
+  Precision (weighted): 0.9704
+  Recall (weighted): 0.9691
+  F1-Score (weighted): 0.9689
+
+  Confusion Matrix (Rows: True Label, Columns: Predicted Label):
+[[ 49,   0,   0,   2,   2,   0,   0,   2,   0,   1],
+ [  0,   3,   0,   1,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   2,   1,   0,   0,   0,   0,   0,   0],
+ [  2,   0,   0,  31,   0,   0,   0,   0,   0,   0],
+ [  0,   0,   0,   0, 235,   0,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,  73,   0,   0,   0,   0],
+ [  0,   0,   0,   0,   0,   0,  31,   1,   0,   0],
+ [  1,   0,   0,   1,   0,   0,   0,  57,   2,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,  19,   0],
+ [  0,   0,   0,   0,   0,   0,   0,   0,   0,   2]]
+  Labels (in order): Anabaena, Aphanizomenon, Cylindrospermopsis, Dolichospermum, Microcystis, Nostoc, Oscillatoria, Phormidium, Planktothrix, Raphidiopsis
+  (Plot generated interactively or saved separately)
+
+  Per-Class TP/TN/FP/FN on Test Set:
+    Anabaena: TP=49, TN=459, FP=3, FN=7
+    Aphanizomenon: TP=3, TN=514, FP=0, FN=1
+    Cylindrospermopsis: TP=2, TN=515, FP=0, FN=1
+    Dolichospermum: TP=31, TN=480, FP=5, FN=2
+    Microcystis: TP=235, TN=281, FP=2, FN=0
+    Nostoc: TP=73, TN=445, FP=0, FN=0
+    Oscillatoria: TP=31, TN=486, FP=0, FN=1
+    Phormidium: TP=57, TN=454, FP=3, FN=4
+    Planktothrix: TP=19, TN=497, FP=2, FN=0
+    Raphidiopsis: TP=2, TN=515, FP=1, FN=0
+
+================================================================================
+              End of Results
+================================================================================
