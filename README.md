@@ -75,7 +75,7 @@ graph TD
     end
 
     J --> K[Treinar Classificador Final com Melhores Hiperparâmetros em X_train_full completo];
-    K --> L[Avaliar no Conjunto de Teste \(X_test_full, y_test_full\)];
+    K --> L[Avaliar no Conjunto de Teste X_test_full, y_test_full];
     L --> M[Gerar Métricas Finais, Matriz de Confusão, TP/TN/FP/FN];
     M --> N[Identificar Melhor Modelo Geral];
     N --> O[Salvar Relatório Detalhado];
