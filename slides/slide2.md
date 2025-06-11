@@ -1,7 +1,31 @@
 ---
 marp: true
----
+theme: default
+class: invert
 
+style : |
+    html {
+        font-size: 62.5%;
+    }
+    section {
+        font-size: 1.4rem;
+        background-image: linear-gradient(#334, #667);
+        text-shadow: .1rem .1rem .2rem #000;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        background: -webkit-linear-gradient(#37d, #dda); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent; 
+        font-weight: bold;
+        text-shadow: none;
+        filter:drop-shadow(.2rem .2rem .2rem #000) 
+    }
+
+    code {
+        text-shadow: none;
+    }
+---
 
 <!-- **Slide 1: Título** -->
 
@@ -29,7 +53,8 @@ Avaliar e comparar o desempenho de diferentes **classificadores tradicionais** (
 
 ## Visão Geral do Pipeline
 
-*(Este diagrama pode ser gerado usando ferramentas como Mermaid Live Editor)*
+![](pipeline.png)
+
 
 ---
 
@@ -96,6 +121,11 @@ train_indices, test_indices = train_test_split(
 train_dataset = Subset(full_dataset, train_indices)
 test_dataset = Subset(full_dataset, test_indices)
 ```
+---
+
+## 3. Carregamento e Divisão do Dataset
+
+![](dataset.png)
 
 ---
 
@@ -149,7 +179,7 @@ def evaluate_metrics(y_true, y_pred, class_names=None, num_classes=None):
 
 ---
 
-**Slide 9: Pipeline Principal - Extração Inicial**
+<!-- **Slide 9: Pipeline Principal - Extração Inicial** -->
 
 ## 6. Etapa 1: Extração de Features (Completa)
 
@@ -165,6 +195,12 @@ for extractor_name, extractor in vit_extractors.items():
     X_test_full, y_test_full = extractor.extract_features(test_loader)
     feature_data[extractor_name] = { 'X_train_full': X_train_full, ... }
 ```
+
+---
+## 6. Etapa 1: Extração de Features (Completa)
+
+![](extratores.png)
+
 
 ---
 
@@ -213,6 +249,13 @@ selection_metric = 'balanced_accuracy'
 
 ---
 
+## 8. Etapa 3: Análise K-Fold e Seleção
+
+![](validacao.png)
+
+
+---
+
 <!-- **Slide 12: Pipeline Principal - Avaliação Final no Teste** -->
 
 ## 9. Etapa 4: Avaliação Final no Conjunto de Teste
@@ -247,6 +290,10 @@ selection_metric = 'balanced_accuracy'
     *   Lista TP, TN, FP, FN por classe.
 *   **Identifica o "Melhor Modelo Geral"** baseado na maior Acurácia Balanceada no conjunto de teste.
 *   **Salva todos os resultados** (K-Fold, Teste Final, Melhor Geral) em um arquivo de texto (`evaluation_results.txt`).
+
+---
+## 10. Exibição e Salvamento dos Resultados
+![](resultados.png)
 
 ---
 
