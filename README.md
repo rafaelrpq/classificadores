@@ -92,9 +92,8 @@ graph LR
 
 ```mermaid
 flowchart LR
-    subgraph DS["Preparando dataset"]
-
-        DS0["baixa dataset"]-->
+    subgraph DS["Preparando Dataset"]
+        DS0[("baixa dataset")]-->
         TT0["configura transformação"]-->DS1
         
         DS1{"possui train/test?"}-- Sim -->
@@ -102,12 +101,42 @@ flowchart LR
         DS3[estratifica:<li>80% train<li>20% test]
         DS1-- Nao -->DS3
         TT1[otimiza imagens para ViT]
-        DS2 & DS3 --> TT1
+        DS2 & DS3 --> TT1-->
+        DS4[X_train_full, y_train_full, X_test_full, y_test_full]
     end
 
-    subgraph CLF["Instanciando Classificadores"]
-        
+    subgraph FE["Instanciando Extratores"]
+        FE0[inicializa extratores]-->
+        FE1{carrega extrator}
+        FE2[extrair caracteristicas de X_train_full, y_train_full, X_test_full, y_test_full]
+        FE1--> FE2 -->FE1
     end
 
-    DS-->CLF
+    subgraph KF[Validação Cruzada]
+        KF0[instancia classificadores]-->
+        KF1{fold < 5}-->
+        KF2{extrator}-->
+        KF3{inicia classificador}-->
+        KF4{define hiperparametro}-->
+        KF5[treina no fold]
+        KF6[valida no fold]-->
+        KF7[calcula metricas]
+
+        KF2-->KF1
+        KF3-->KF2
+        KF4-->KF3
+        KF5-->KF6-->KF4
+         
+    end
+
+    subgraph OR[Otimização e Resultados]
+        OR0[selecionar melhores Hiperparâmetros por Extrator, Classificador]-->
+        OR1[Treinar Classificador Final com Melhores Hiperparâmetros em X_train_full]-->
+        OR2[Avaliar no Conjunto de Teste X_test_full, y_test_full]-->
+        OR3[Gerar Métricas Finais, Matriz de Confusão, TP/TN/FP/FN]-->
+        OR4[dentificar Melhor Modelo Geral]-->
+        OR5[(Salvar Relatório Detalhado)]
+    end
+
+    DS==>FE==>KF==>OR
 ```
