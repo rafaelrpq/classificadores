@@ -114,8 +114,8 @@ flowchart LR
 
     subgraph KF[Validação Cruzada]
         KF0[instancia classificadores]-->
-        KF1{fold < 5}-->
-        KF2{extrator}-->
+        KF1{extrator}-->
+        KF2{fold < 5}-->
         KF3{inicia classificador}-->
         KF4{define hiperparametro}-->
         KF5[treina no fold]

@@ -9,98 +9,86 @@
 Extractor: DINO
 Classifier: SVM
   Selected Params: {'C': 10}
-  Avg balanced_accuracy: 0.9022
+  Avg Accuracy (Sample Weighted): 0.9022
   Avg Metrics (Macro): Precision=0.9389, Recall=0.9022, F1=0.9113
   Avg Metrics (Weighted): Precision=0.9612, Recall=0.9590, F1=0.9582
-  Avg Accuracy: 0.9590, Avg Balanced Accuracy: 0.9022
 ------------------------------
 Extractor: DINO
 Classifier: KNN
   Selected Params: {'n_neighbors': 1}
-  Avg balanced_accuracy: 0.8931
+  Avg Accuracy (Sample Weighted): 0.8931
   Avg Metrics (Macro): Precision=0.9170, Recall=0.8931, F1=0.8974
   Avg Metrics (Weighted): Precision=0.9505, Recall=0.9489, F1=0.9482
-  Avg Accuracy: 0.9489, Avg Balanced Accuracy: 0.8931
 ------------------------------
 Extractor: DINO
 Classifier: MLP
   Selected Params: {'hidden_layer_sizes': (100, 100), 'max_iter': 200, 'random_state': 42}
-  Avg balanced_accuracy: 0.8761
+  Avg Accuracy (Sample Weighted): 0.8761
   Avg Metrics (Macro): Precision=0.8853, Recall=0.8761, F1=0.8749
   Avg Metrics (Weighted): Precision=0.9491, Recall=0.9489, F1=0.9478
-  Avg Accuracy: 0.9489, Avg Balanced Accuracy: 0.8761
 ------------------------------
 Extractor: ViT-Large
 Classifier: MLP
   Selected Params: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
-  Avg balanced_accuracy: 0.8657
+  Avg Accuracy (Sample Weighted): 0.8657
   Avg Metrics (Macro): Precision=0.9079, Recall=0.8657, F1=0.8760
   Avg Metrics (Weighted): Precision=0.9413, Recall=0.9397, F1=0.9389
-  Avg Accuracy: 0.9397, Avg Balanced Accuracy: 0.8657
 ------------------------------
 Extractor: ViT-Base
 Classifier: KNN
   Selected Params: {'n_neighbors': 1}
-  Avg balanced_accuracy: 0.8330
+  Avg Accuracy (Sample Weighted): 0.8330
   Avg Metrics (Macro): Precision=0.8101, Recall=0.8161, F1=0.7986
   Avg Metrics (Weighted): Precision=0.9198, Recall=0.9185, F1=0.9167
-  Avg Accuracy: 0.9185, Avg Balanced Accuracy: 0.8330
 ------------------------------
 Extractor: ViT-Base
 Classifier: MLP
   Selected Params: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
-  Avg balanced_accuracy: 0.8276
+  Avg Accuracy (Sample Weighted): 0.8276
   Avg Metrics (Macro): Precision=0.8593, Recall=0.8276, F1=0.8362
   Avg Metrics (Weighted): Precision=0.9314, Recall=0.9310, F1=0.9297
-  Avg Accuracy: 0.9310, Avg Balanced Accuracy: 0.8276
 ------------------------------
 Extractor: ViT-Base
 Classifier: SVM
   Selected Params: {'C': 100}
-  Avg balanced_accuracy: 0.8125
+  Avg Accuracy (Sample Weighted): 0.8125
   Avg Metrics (Macro): Precision=0.8883, Recall=0.8125, F1=0.8351
   Avg Metrics (Weighted): Precision=0.9399, Recall=0.9382, F1=0.9363
-  Avg Accuracy: 0.9382, Avg Balanced Accuracy: 0.8125
 ------------------------------
 Extractor: ViT-Large
 Classifier: SVM
   Selected Params: {'C': 100}
-  Avg balanced_accuracy: 0.8110
+  Avg Accuracy (Sample Weighted): 0.8110
   Avg Metrics (Macro): Precision=0.8605, Recall=0.8110, F1=0.8252
   Avg Metrics (Weighted): Precision=0.9418, Recall=0.9431, F1=0.9401
-  Avg Accuracy: 0.9431, Avg Balanced Accuracy: 0.8110
 ------------------------------
 Extractor: ViT-Large
 Classifier: KNN
   Selected Params: {'n_neighbors': 1}
-  Avg balanced_accuracy: 0.7958
+  Avg Accuracy (Sample Weighted): 0.7958
   Avg Metrics (Macro): Precision=0.8296, Recall=0.7958, F1=0.7947
   Avg Metrics (Weighted): Precision=0.9240, Recall=0.9228, F1=0.9202
-  Avg Accuracy: 0.9228, Avg Balanced Accuracy: 0.7958
 ------------------------------
 Extractor: DINO
 Classifier: RandomForest
   Selected Params: {'n_estimators': 50, 'random_state': 42}
-  Avg balanced_accuracy: 0.6549
+  Avg Accuracy (Sample Weighted): 0.6549
   Avg Metrics (Macro): Precision=0.7907, Recall=0.6549, F1=0.6856
   Avg Metrics (Weighted): Precision=0.8773, Recall=0.8712, F1=0.8619
-  Avg Accuracy: 0.8712, Avg Balanced Accuracy: 0.6549
 ------------------------------
 Extractor: ViT-Base
 Classifier: RandomForest
   Selected Params: {'n_estimators': 200, 'random_state': 42}
-  Avg balanced_accuracy: 0.5530
+  Avg Accuracy (Sample Weighted): 0.5530
   Avg Metrics (Macro): Precision=0.6656, Recall=0.5530, F1=0.5732
   Avg Metrics (Weighted): Precision=0.8367, Recall=0.8370, F1=0.8209
-  Avg Accuracy: 0.8370, Avg Balanced Accuracy: 0.5530
 ------------------------------
 Extractor: ViT-Large
 Classifier: RandomForest
   Selected Params: {'n_estimators': 100, 'random_state': 42}
-  Avg balanced_accuracy: 0.5322
+  Avg Accuracy (Sample Weighted): 0.5322
   Avg Metrics (Macro): Precision=0.5806, Recall=0.5322, F1=0.5370
   Avg Metrics (Weighted): Precision=0.8255, Recall=0.8355, F1=0.8170
-  Avg Accuracy: 0.8355, Avg Balanced Accuracy: 0.5322
 ------------------------------
 
 ============================================================
@@ -113,8 +101,7 @@ Result 1:
   Parameters: {'C': 10}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9749
-    Balanced Accuracy: 0.8234
+    Accuracy (Sample Weighted): 0.8234
     Precision (macro): 0.8217
     Recall (macro): 0.8234
     F1-Score (macro): 0.8193
@@ -155,8 +142,7 @@ Result 2:
   Parameters: {'hidden_layer_sizes': (100, 100), 'max_iter': 200, 'random_state': 42}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9595
-    Balanced Accuracy: 0.8097
+    Accuracy (Sample Weighted): 0.8097
     Precision (macro): 0.8069
     Recall (macro): 0.8097
     F1-Score (macro): 0.8049
@@ -197,8 +183,7 @@ Result 3:
   Parameters: {'n_estimators': 50, 'random_state': 42}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.8996
-    Balanced Accuracy: 0.6598
+    Accuracy (Sample Weighted): 0.6598
     Precision (macro): 0.7114
     Recall (macro): 0.6598
     F1-Score (macro): 0.6797
@@ -239,8 +224,7 @@ Result 4:
   Parameters: {'n_neighbors': 1}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9691
-    Balanced Accuracy: 0.9134
+    Accuracy (Sample Weighted): 0.9134
     Precision (macro): 0.9316
     Recall (macro): 0.9134
     F1-Score (macro): 0.9135
@@ -281,8 +265,7 @@ Result 5:
   Parameters: {'C': 100}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9479
-    Balanced Accuracy: 0.7945
+    Accuracy (Sample Weighted): 0.7945
     Precision (macro): 0.8883
     Recall (macro): 0.7945
     F1-Score (macro): 0.8240
@@ -323,8 +306,7 @@ Result 6:
   Parameters: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9382
-    Balanced Accuracy: 0.8372
+    Accuracy (Sample Weighted): 0.8372
     Precision (macro): 0.7984
     Recall (macro): 0.8372
     F1-Score (macro): 0.8064
@@ -365,8 +347,7 @@ Result 7:
   Parameters: {'n_estimators': 200, 'random_state': 42}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.8822
-    Balanced Accuracy: 0.5699
+    Accuracy (Sample Weighted): 0.5699
     Precision (macro): 0.5980
     Recall (macro): 0.5699
     F1-Score (macro): 0.5788
@@ -407,8 +388,7 @@ Result 8:
   Parameters: {'n_neighbors': 1}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9459
-    Balanced Accuracy: 0.7981
+    Accuracy (Sample Weighted): 0.7981
     Precision (macro): 0.8229
     Recall (macro): 0.7981
     F1-Score (macro): 0.8043
@@ -449,8 +429,7 @@ Result 9:
   Parameters: {'C': 100}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9537
-    Balanced Accuracy: 0.7540
+    Accuracy (Sample Weighted): 0.7540
     Precision (macro): 0.7644
     Recall (macro): 0.7540
     F1-Score (macro): 0.7547
@@ -491,8 +470,7 @@ Result 10:
   Parameters: {'hidden_layer_sizes': (200, 200), 'max_iter': 200, 'random_state': 42}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9402
-    Balanced Accuracy: 0.7902
+    Accuracy (Sample Weighted): 0.7902
     Precision (macro): 0.8248
     Recall (macro): 0.7902
     F1-Score (macro): 0.7906
@@ -533,8 +511,7 @@ Result 11:
   Parameters: {'n_estimators': 100, 'random_state': 42}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.8784
-    Balanced Accuracy: 0.5611
+    Accuracy (Sample Weighted): 0.5611
     Precision (macro): 0.5993
     Recall (macro): 0.5611
     F1-Score (macro): 0.5698
@@ -575,8 +552,7 @@ Result 12:
   Parameters: {'n_neighbors': 1}
   Status: Success
   Metrics on Test Set:
-    Accuracy: 0.9575
-    Balanced Accuracy: 0.8041
+    Accuracy (Sample Weighted): 0.8041
     Precision (macro): 0.8675
     Recall (macro): 0.8041
     F1-Score (macro): 0.8218
@@ -612,18 +588,17 @@ Result 12:
 ----------------------------------------
 
 ============================================================
---- Overall Best Result on Test Set (by Balanced Accuracy) ---
+--- Overall Best Result on Test Set (by Sample-Weighted Accuracy) ---
 ============================================================
 
-Overall Best Model configuration based on Test Set Balanced Accuracy (0.9134):
+Overall Best Model configuration based on Test Set Sample-Weighted Accuracy (0.9134):
 ------------------------------------------------------------
 Extractor: DINO
 Classifier: KNN
 Parameters (Selected by K-Fold): {'n_neighbors': 1}
 ------------------------------------------------------------
 Metrics on Test Set for the Best Model:
-  Accuracy: 0.9691
-  Balanced Accuracy: 0.9134
+  Accuracy (Sample Weighted): 0.9134
   Precision (macro): 0.9316
   Recall (macro): 0.9134
   F1-Score (macro): 0.9135

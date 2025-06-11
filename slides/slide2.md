@@ -299,10 +299,44 @@ selection_metric = 'balanced_accuracy'
 
 <!-- **Slide 14: Conclusão** -->
 
-## Conclusão
+## Resultados
 
-*   O código implementa um pipeline sistemático para avaliar combinações de extratores de features ViT e classificadores tradicionais.
-*   A validação cruzada K-Fold é usada para otimização robusta de hiperparâmetros.
-*   Resultados detalhados, incluindo métricas, matrizes de confusão e componentes TP/TN/FP/FN, são gerados para análise aprofundada.
-*   Permite identificar as arquiteturas e configurações mais promissoras para a tarefa de classificação de imagens no dataset fornecido.
+```bash
+Overall Best Model configuration based on Test Set Sample-Weighted Accuracy (0.9134):
+------------------------------------------------------------
+Extractor: DINO
+Classifier: KNN
+Parameters (Selected by K-Fold): {'n_neighbors': 1}
+------------------------------------------------------------
+Metrics on Test Set for the Best Model:
+  Accuracy (Sample Weighted): 0.9134
+  Precision (macro): 0.9316
+  Recall (macro): 0.9134
+  F1-Score (macro): 0.9135
+  Precision (weighted): 0.9704
+  Recall (weighted): 0.9691
+  F1-Score (weighted): 0.9689
+```
+---
+## Resultados
 
+| Métrica                 | Melhor Modelo (Kianian)        | Valor do Artigo | Melhor Modelo (ViT)    | Valor do ViT | Vencedor     |
+| :---------------------- | :----------------------------- | --------------: | :--------------------- | -----------: | :-----------: |
+| Acurácia Ponderada      | MobileNet + FCNN               | **94.79%**      | DINO + KNN             | 91.34%       | Kianian      |
+| F1-Score Ponderado      | MobileNet + FCNN               | 94.91%          | DINO + KNN             | **96.89%**   | ViT          |
+| Macro Acurácia          | MobileNetV2 + FCNN             | 90.17%          | DINO + KNN             | **91.34%**   | ViT          |
+| Macro F1-Score          | MobileNetV2 + FCNN             | 87.64%          | DINO + KNN             | **91.35%**   | ViT          |
+
+
+<!-- Melhor Resultado Ponderado (Weighted):
+●​ Extrator: MobileNet (fine-tuned)
+●​ Classificador: FCNN
+●​ Métricas:
+●​ Acurácia Ponderada: 94.79%
+●​ F1-Score Ponderado: 94.91%
+2.​ Melhor Resultado Macro:
+●​ Extrator: MobileNetV2 (fine-tuned)
+●​ Classificador: FCNN
+●​ Métricas:
+●​ Recall Macro: 90.17%
+●​ F1-Score Macro: 87.64% -->
