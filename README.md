@@ -89,3 +89,25 @@ graph LR
     class D,F,G,H,K,L,M,N,O process;
     class I,J decision;
 ```
+
+```mermaid
+flowchart LR
+    subgraph DS["Preparando dataset"]
+
+        DS0["baixa dataset"]-->
+        TT0["configura transformação"]-->DS1
+        
+        DS1{"possui train/test?"}-- Sim -->
+        DS2[carrega train<br>carrega test]
+        DS3[estratifica:<li>80% train<li>20% test]
+        DS1-- Nao -->DS3
+        TT1[otimiza imagens para ViT]
+        DS2 & DS3 --> TT1
+    end
+
+    subgraph CLF["Instanciando Classificadores"]
+        
+    end
+
+    DS-->CLF
+```
