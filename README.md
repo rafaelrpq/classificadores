@@ -81,7 +81,7 @@ graph TD
     subgraph F[Exibição e Salvamento de Resultados]
         E7 --> F0[Exibir Detalhes dos Resultados Finais no Console]
         F0 --> F1[Plotar Matrizes de Confusão para Cada Modelo Avaliado]
-        F1 --> F2[Identificar e Exibir o Melhor Modelo Geral `Baseado na Acurácia Ponderada no Teste`]
+        F1 --> F2[Identificar e Exibir o Melhor Modelo Geral Baseado na Acurácia Ponderada no Teste]
         F2 --> F3[Salvar Todos os Resultados em 'evaluation_results.txt']
         F3 --> F4(Fim do Pipeline)
     end
