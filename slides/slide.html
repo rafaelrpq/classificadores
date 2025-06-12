@@ -420,7 +420,7 @@ code {
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="5" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="6" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -495,103 +495,25 @@ code {
 ;" data-transition-back="{&quot;name&quot;:&quot;slide-up&quot;}" data-transition="{&quot;name&quot;:&quot;slide-up&quot;}">
 <h2 id="3-carregamento-e-divis%C3%A3o-do-dataset">3. Carregamento e Divisão do Dataset</h2>
 <ul>
-<li data-marpit-fragment="1">Dataset <code>CTCB</code> clonado do GitHub.</li>
-<li data-marpit-fragment="2">Usa <code>datasets.ImageFolder</code>.</li>
-<li data-marpit-fragment="3"><strong>Lógica de Divisão:</strong>
+<li data-marpit-fragment="1">
+<p>Dataset <code>CTCB</code> clonado do GitHub.</p>
+</li>
+<li data-marpit-fragment="2">
+<p>Usa <code>datasets.ImageFolder</code>.</p>
+</li>
+<li data-marpit-fragment="3">
+<p><strong>Lógica de Divisão:</strong></p>
 <ul>
 <li data-marpit-fragment="4">Se não houver diretório de Teste, divide o diretório de Treino (80/20 estratificado).</li>
-<li data-marpit-fragment="5">Caso contrário, usa os diretórios de Treino e Teste separados.<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">    <span class="hljs-comment"># Se não houver Test directory...</span>
-    full_dataset = datasets.ImageFolder(root=train_data_dir, transform=transform)
-    targets = full_dataset.targets
-    train_indices, test_indices = train_test_split(
-        <span class="hljs-built_in">list</span>(<span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(full_dataset))),
-        test_size=<span class="hljs-number">0.2</span>, random_state=<span class="hljs-number">42</span>, stratify=targets
-    )
-    train_dataset = Subset(full_dataset, train_indices)
-    test_dataset = Subset(full_dataset, test_indices)
-</code></pre>
-</li>
+<li data-marpit-fragment="5">Caso contrário, usa os diretórios de Treino e Teste separados.</li>
 </ul>
 </li>
-</ul>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-class="invert" data-theme="default" data-style="html {
-    font-size: 62.5%;
-}
-section {
-    font-size: 1.4rem;
-    background-image: linear-gradient(#334, #667);
-    text-shadow: .1rem .1rem .2rem #000;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    background: -webkit-linear-gradient(#37d, #dda); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    font-weight: bold;
-    text-shadow: none;
-    filter:drop-shadow(.2rem .2rem .2rem #000) 
-}
-
-h1 {
-    text-align: center;
-    font-size: 3.2rem
-}
-
-
-code {
-    text-shadow: none;
-}
-
-@keyframes marp-outgoing-transition-slide-up {
-    from { transform: translateY(0%); }
-    to { transform: translateY(calc(var(--marp-transition-direction, 1) * -100%)); }
-}
-@keyframes marp-incoming-transition-slide-up {
-    from { transform: translateY(calc(var(--marp-transition-direction, 1) * 100%)); }
-    to { transform: translateY(0%); }
-}
-" lang="pt-BR" class="invert" style="--class:invert;--theme:default;--style:html {
-    font-size: 62.5%;
-}
-section {
-    font-size: 1.4rem;
-    background-image: linear-gradient(#334, #667);
-    text-shadow: .1rem .1rem .2rem #000;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    background: -webkit-linear-gradient(#37d, #dda); 
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
-    font-weight: bold;
-    text-shadow: none;
-    filter:drop-shadow(.2rem .2rem .2rem #000) 
-}
-
-h1 {
-    text-align: center;
-    font-size: 3.2rem
-}
-
-
-code {
-    text-shadow: none;
-}
-
-@keyframes marp-outgoing-transition-slide-up {
-    from { transform: translateY(0%); }
-    to { transform: translateY(calc(var(--marp-transition-direction, 1) * -100%)); }
-}
-@keyframes marp-incoming-transition-slide-up {
-    from { transform: translateY(calc(var(--marp-transition-direction, 1) * 100%)); }
-    to { transform: translateY(0%); }
-}
-;" data-transition-back="{&quot;name&quot;:&quot;slide-up&quot;}" data-transition="{&quot;name&quot;:&quot;slide-up&quot;}">
-<h2 id="3-carregamento-e-divis%C3%A3o-do-dataset-1">3. Carregamento e Divisão do Dataset</h2>
+<li data-marpit-fragment="6">
 <p><img src="dataset.png" alt="" /></p>
+</li>
+</ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-marpit-fragments="4" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-marpit-fragments="4" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -667,28 +589,26 @@ code {
 <h2 id="4-classe-featureextractor">4. Classe <code>FeatureExtractor</code></h2>
 <ul>
 <li data-marpit-fragment="1">Carrega modelos ViT pré-treinados da Hugging Face (<code>AutoModel</code>).</li>
-<li data-marpit-fragment="2">Extrai features (geralmente o token <code>[CLS]</code>) das imagens.</li>
-<li data-marpit-fragment="3">Opera em modo de avaliação (<code>model.eval()</code>).</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">FeatureExtractor</span>:
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vit_model_name</span>):
-        <span class="hljs-variable language_">self</span>.model = AutoModel.from_pretrained(vit_model_name).to(device)
-        <span class="hljs-variable language_">self</span>.model.<span class="hljs-built_in">eval</span>()
+<li data-marpit-fragment="2">Extrai features (geralmente o CLS token <code>[last_hidden_state</code>) das imagens.</li>
+<li data-marpit-fragment="3">Opera em modo de avaliação (<code>model.eval()</code>).<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">    <span class="hljs-keyword">class</span> <span class="hljs-title class_">FeatureExtractor</span>:
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, vit_model_name</span>):
+            <span class="hljs-variable language_">self</span>.model = AutoModel.from_pretrained(vit_model_name).to(device)
+            <span class="hljs-variable language_">self</span>.model.<span class="hljs-built_in">eval</span>()
 
-    <span class="hljs-keyword">def</span> <span class="hljs-title function_">extract_features</span>(<span class="hljs-params">self, dataloader</span>):
-        <span class="hljs-comment"># ... (loop sobre o dataloader)</span>
-        <span class="hljs-keyword">with</span> torch.no_grad():
-            outputs = <span class="hljs-variable language_">self</span>.model(inputs)
-            <span class="hljs-comment"># Prioriza last_hidden_state[:, 0, :] (CLS token)</span>
-            cls_tokens = outputs.last_hidden_state[:, <span class="hljs-number">0</span>, :]
-        <span class="hljs-comment"># ...</span>
-        <span class="hljs-keyword">return</span> np.vstack(features), np.hstack(labels)
+        <span class="hljs-keyword">def</span> <span class="hljs-title function_">extract_features</span>(<span class="hljs-params">self, dataloader</span>):
+            <span class="hljs-comment"># ... (loop sobre o dataloader)</span>
+            <span class="hljs-keyword">with</span> torch.no_grad():
+                outputs = <span class="hljs-variable language_">self</span>.model(inputs)
+                <span class="hljs-comment"># Prioriza last_hidden_state[:, 0, :] (CLS token)</span>
+                cls_tokens = outputs.last_hidden_state[:, <span class="hljs-number">0</span>, :]
+            <span class="hljs-comment"># ...</span>
+            <span class="hljs-keyword">return</span> np.vstack(features), np.hstack(labels)
 </code></pre>
-<ul>
+</li>
 <li data-marpit-fragment="4"><strong>Modelos Usados:</strong> &quot;facebook/dino-vitb8&quot;, &quot;google/vit-base-patch16-224&quot;, &quot;google/vit-large-patch16-224&quot;</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="6" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-marpit-fragments="6" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -769,19 +689,12 @@ code {
 <li data-marpit-fragment="3">Acurácia Ponderada</li>
 <li data-marpit-fragment="4">Precisão, Recall, F1-Score (Macro e Ponderado)</li>
 <li data-marpit-fragment="5">Matriz de Confusão</li>
-<li data-marpit-fragment="6">TP, TN, FP, FN por classe<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">    <span class="hljs-keyword">def</span> <span class="hljs-title function_">evaluate_metrics</span>(<span class="hljs-params">y_true, y_pred, class_names=<span class="hljs-literal">None</span>, num_classes=<span class="hljs-literal">None</span></span>):
-        acc_weighted_sample = accuracy_score(y_true, y_pred, sample_weight=sample_weights)
-        f1_macro = f1_score(y_true, y_pred, average=<span class="hljs-string">&quot;macro&quot;</span>, zero_division=<span class="hljs-number">0</span>)
-        cm = confusion_matrix(y_true, y_pred, labels=np.arange(num_classes))
-        <span class="hljs-comment"># ... cálculo de TP/TN/FP/FN</span>
-        <span class="hljs-keyword">return</span> { <span class="hljs-string">&quot;accuracy&quot;</span>: acc, <span class="hljs-string">&quot;f1_macro&quot;</span>: f1_macro, ... }
-</code></pre>
-</li>
+<li data-marpit-fragment="6">TP, TN, FP, FN por classe</li>
 </ul>
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-marpit-fragments="4" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="5" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -856,22 +769,27 @@ code {
 ;" data-transition-back="{&quot;name&quot;:&quot;slide-up&quot;}" data-transition="{&quot;name&quot;:&quot;slide-up&quot;}">
 <h2 id="6-etapa-1-extra%C3%A7%C3%A3o-de-features-completa">6. Etapa 1: Extração de Features (Completa)</h2>
 <ul>
-<li data-marpit-fragment="1">Para cada extrator ViT:
+<li data-marpit-fragment="1">
+<p>Para cada extrator ViT:</p>
 <ul>
 <li data-marpit-fragment="2">Extrai features de <strong>TODO</strong> o conjunto de treino (<code>X_train_full</code>, <code>y_train_full</code>).</li>
 <li data-marpit-fragment="3">Extrai features de <strong>TODO</strong> o conjunto de teste (<code>X_test_full</code>, <code>y_test_full</code>).</li>
 </ul>
 </li>
-<li data-marpit-fragment="4"><strong>Objetivo:</strong> Evitar re-extração custosa dentro do loop K-Fold.</li>
-</ul>
+<li data-marpit-fragment="4">
+<p><strong>Objetivo:</strong> Evitar re-extração custosa dentro do loop K-Fold.</p>
+</li>
+<li data-marpit-fragment="5">
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">feature_data = {}
 <span class="hljs-keyword">for</span> extractor_name, extractor <span class="hljs-keyword">in</span> vit_extractors.items():
     X_train_full, y_train_full = extractor.extract_features(full_train_loader)
     X_test_full, y_test_full = extractor.extract_features(test_loader)
     feature_data[extractor_name] = { <span class="hljs-string">&#x27;X_train_full&#x27;</span>: X_train_full, ... }
 </code></pre>
+</li>
+</ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -947,7 +865,7 @@ code {
 <h2 id="6-etapa-1-extra%C3%A7%C3%A3o-de-features-completa-1">6. Etapa 1: Extração de Features (Completa)</h2>
 <p><img src="extratores.png" alt="" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="3" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-fragments="3" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1044,7 +962,7 @@ code {
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-marpit-fragments="3" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="3" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1131,7 +1049,7 @@ code {
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1207,7 +1125,7 @@ code {
 <h2 id="8-etapa-3-an%C3%A1lise-k-fold-e-sele%C3%A7%C3%A3o-1">8. Etapa 3: Análise K-Fold e Seleção</h2>
 <p><img src="validacao.png" alt="" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="1" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-marpit-fragments="1" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1298,7 +1216,7 @@ test_metrics = evaluate_metrics(y_test_full, y_pred_test, ...)
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="6" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="6" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1387,7 +1305,7 @@ code {
 <li data-marpit-fragment="6"><strong>Salva todos os resultados</strong> (K-Fold, Teste Final, Melhor Geral) em um arquivo de texto (<code>evaluation_results.txt</code>).</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1463,7 +1381,7 @@ code {
 <h2 id="10-exibi%C3%A7%C3%A3o-e-salvamento-dos-resultados-1">10. Exibição e Salvamento dos Resultados</h2>
 <p><img src="resultados.png" alt="" /></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1553,7 +1471,7 @@ code {
     F1-Score (weighted): 0.9689
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -1675,7 +1593,24 @@ code {
 </table>
 </section>
 <script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
-</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>**Slide 1: Título**</p></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>**Slide 2: Objetivo do Código**</p></div><div class="bespoke-marp-note" data-index="2" tabindex="0"><p>**Slide 3: Diagrama de Fluxo do Pipeline**</p></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>**Slide 4: Configuração Inicial**</p></div><div class="bespoke-marp-note" data-index="4" tabindex="0"><p>**Slide 5: Hiperparâmetros e Transformações**</p></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>**Slide 6: Carregamento do Dataset**</p></div><div class="bespoke-marp-note" data-index="7" tabindex="0"><p>**Slide 7: Extrator de Features (ViT)**</p></div><div class="bespoke-marp-note" data-index="8" tabindex="0"><p>**Slide 8: Função de Avaliação de Métricas**</p></div><div class="bespoke-marp-note" data-index="9" tabindex="0"><p>**Slide 9: Pipeline Principal - Extração Inicial**</p></div><div class="bespoke-marp-note" data-index="11" tabindex="0"><p>**Slide 10: Pipeline Principal - Validação Cruzada K-Fold**</p></div><div class="bespoke-marp-note" data-index="12" tabindex="0"><p>**Slide 11: Pipeline Principal - Seleção dos Melhores Hiperparâmetros**</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>**Slide 12: Pipeline Principal - Avaliação Final no Teste**</p></div><div class="bespoke-marp-note" data-index="15" tabindex="0"><p>**Slide 13: Resultados e Análise**</p></div><div class="bespoke-marp-note" data-index="17" tabindex="0"><p>**Slide 14: Conclusão**</p></div><div class="bespoke-marp-note" data-index="18" tabindex="0"><p>Melhor Resultado Ponderado (Weighted):
+</script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>**Slide 1: Título**</p></div><div class="bespoke-marp-note" data-index="1" tabindex="0"><p>**Slide 2: Objetivo do Código**</p></div><div class="bespoke-marp-note" data-index="2" tabindex="0"><p>**Slide 3: Diagrama de Fluxo do Pipeline**</p></div><div class="bespoke-marp-note" data-index="3" tabindex="0"><p>**Slide 4: Configuração Inicial**</p></div><div class="bespoke-marp-note" data-index="4" tabindex="0"><p>**Slide 5: Hiperparâmetros e Transformações**</p></div><div class="bespoke-marp-note" data-index="5" tabindex="0"><p>**Slide 6: Carregamento do Dataset**</p><p>```python
+    # Se não houver Test directory...
+    full_dataset = datasets.ImageFolder(root=train_data_dir, transform=transform)
+    targets = full_dataset.targets
+    train_indices, test_indices = train_test_split(
+        list(range(len(full_dataset))),
+        test_size=0.2, random_state=42, stratify=targets
+    )
+    train_dataset = Subset(full_dataset, train_indices)
+    test_dataset = Subset(full_dataset, test_indices)
+```</p></div><div class="bespoke-marp-note" data-index="6" tabindex="0"><p>**Slide 7: Extrator de Features (ViT)**</p></div><div class="bespoke-marp-note" data-index="7" tabindex="0"><p>**Slide 8: Função de Avaliação de Métricas**</p><p>```python
+    def evaluate_metrics(y_true, y_pred, class_names=None, num_classes=None):
+        acc_weighted_sample = accuracy_score(y_true, y_pred, sample_weight=sample_weights)
+        f1_macro = f1_score(y_true, y_pred, average=&quot;macro&quot;, zero_division=0)
+        cm = confusion_matrix(y_true, y_pred, labels=np.arange(num_classes))
+        # ... cálculo de TP/TN/FP/FN
+        return { &quot;accuracy&quot;: acc, &quot;f1_macro&quot;: f1_macro, ... }
+```</p></div><div class="bespoke-marp-note" data-index="8" tabindex="0"><p>**Slide 9: Pipeline Principal - Extração Inicial**</p></div><div class="bespoke-marp-note" data-index="10" tabindex="0"><p>**Slide 10: Pipeline Principal - Validação Cruzada K-Fold**</p></div><div class="bespoke-marp-note" data-index="11" tabindex="0"><p>**Slide 11: Pipeline Principal - Seleção dos Melhores Hiperparâmetros**</p></div><div class="bespoke-marp-note" data-index="13" tabindex="0"><p>**Slide 12: Pipeline Principal - Avaliação Final no Teste**</p></div><div class="bespoke-marp-note" data-index="14" tabindex="0"><p>**Slide 13: Resultados e Análise**</p></div><div class="bespoke-marp-note" data-index="16" tabindex="0"><p>**Slide 14: Conclusão**</p></div><div class="bespoke-marp-note" data-index="17" tabindex="0"><p>Melhor Resultado Ponderado (Weighted):
 ●​ Extrator: MobileNet (fine-tuned)
 ●​ Classificador: FCNN
 ●​ Métricas:

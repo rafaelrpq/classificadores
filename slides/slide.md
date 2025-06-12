@@ -122,7 +122,7 @@ Avaliar e comparar o desempenho de diferentes **classificadores tradicionais** (
 *   **Lógica de Divisão:**
     *   Se não houver diretório de Teste, divide o diretório de Treino (80/20 estratificado).
     *   Caso contrário, usa os diretórios de Treino e Teste separados.
-        ```python
+        <!-- ```python
             # Se não houver Test directory...
             full_dataset = datasets.ImageFolder(root=train_data_dir, transform=transform)
             targets = full_dataset.targets
@@ -132,12 +132,9 @@ Avaliar e comparar o desempenho de diferentes **classificadores tradicionais** (
             )
             train_dataset = Subset(full_dataset, train_indices)
             test_dataset = Subset(full_dataset, test_indices)
-        ```
----
+        ``` -->
 
-## 3. Carregamento e Divisão do Dataset
-
-![](dataset.png)
+* ![](dataset.png)
 
 ---
 
@@ -146,24 +143,23 @@ Avaliar e comparar o desempenho de diferentes **classificadores tradicionais** (
 ## 4. Classe `FeatureExtractor`
 
 *   Carrega modelos ViT pré-treinados da Hugging Face (`AutoModel`).
-*   Extrai features (geralmente o token `[CLS]`) das imagens.
+*   Extrai features (geralmente o CLS token `[last_hidden_state`) das imagens.
 *   Opera em modo de avaliação (`model.eval()`).
+    ```python
+        class FeatureExtractor:
+            def __init__(self, vit_model_name):
+                self.model = AutoModel.from_pretrained(vit_model_name).to(device)
+                self.model.eval()
 
-```python
-class FeatureExtractor:
-    def __init__(self, vit_model_name):
-        self.model = AutoModel.from_pretrained(vit_model_name).to(device)
-        self.model.eval()
-
-    def extract_features(self, dataloader):
-        # ... (loop sobre o dataloader)
-        with torch.no_grad():
-            outputs = self.model(inputs)
-            # Prioriza last_hidden_state[:, 0, :] (CLS token)
-            cls_tokens = outputs.last_hidden_state[:, 0, :]
-        # ...
-        return np.vstack(features), np.hstack(labels)
-```
+            def extract_features(self, dataloader):
+                # ... (loop sobre o dataloader)
+                with torch.no_grad():
+                    outputs = self.model(inputs)
+                    # Prioriza last_hidden_state[:, 0, :] (CLS token)
+                    cls_tokens = outputs.last_hidden_state[:, 0, :]
+                # ...
+                return np.vstack(features), np.hstack(labels)
+    ```
 *   **Modelos Usados:** "facebook/dino-vitb8", "google/vit-base-patch16-224", "google/vit-large-patch16-224"
 
 ---
@@ -178,14 +174,14 @@ class FeatureExtractor:
     *   Precisão, Recall, F1-Score (Macro e Ponderado)
     *   Matriz de Confusão
     *   TP, TN, FP, FN por classe
-        ```python
+        <!-- ```python
             def evaluate_metrics(y_true, y_pred, class_names=None, num_classes=None):
                 acc_weighted_sample = accuracy_score(y_true, y_pred, sample_weight=sample_weights)
                 f1_macro = f1_score(y_true, y_pred, average="macro", zero_division=0)
                 cm = confusion_matrix(y_true, y_pred, labels=np.arange(num_classes))
                 # ... cálculo de TP/TN/FP/FN
                 return { "accuracy": acc, "f1_macro": f1_macro, ... }
-        ```
+        ``` -->
 
 ---
 
@@ -198,13 +194,13 @@ class FeatureExtractor:
     *   Extrai features de **TODO** o conjunto de teste (`X_test_full`, `y_test_full`).
 *   **Objetivo:** Evitar re-extração custosa dentro do loop K-Fold.
 
-```python
-feature_data = {}
-for extractor_name, extractor in vit_extractors.items():
-    X_train_full, y_train_full = extractor.extract_features(full_train_loader)
-    X_test_full, y_test_full = extractor.extract_features(test_loader)
-    feature_data[extractor_name] = { 'X_train_full': X_train_full, ... }
-```
+*   ```python
+    feature_data = {}
+    for extractor_name, extractor in vit_extractors.items():
+        X_train_full, y_train_full = extractor.extract_features(full_train_loader)
+        X_test_full, y_test_full = extractor.extract_features(test_loader)
+        feature_data[extractor_name] = { 'X_train_full': X_train_full, ... }
+    ```
 
 ---
 ## 6. Etapa 1: Extração de Features (Completa)

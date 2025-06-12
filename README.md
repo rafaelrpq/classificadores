@@ -10,133 +10,79 @@ Obs.: Cada método alternativo será composto de um extrator de características
 - Selecionar a configuração ideal com base nos resultados de validação. 
 
 ```mermaid
----
-config:
-  theme: default
-  look: neo
-  layout: dagre
----
-flowchart TD
-    A(("Start")) --> B["Setup Device"]
-    B --> C["Define Hyperparameters"]
-    C --> D["Define Image Transformations"]
-    D --> E[("Download Dataset")]
-    E --> F{"Check for Test Directory?"}
-    F -- No --> G["Split Train Directory into Train 0.8 Test 0.2"]
-    F -- Yes --> H["Load Train and Test Datasets"]
-    G --> I["Initialize DataLoaders for Full Train and Test"]
-    H --> I
-    I --> J["Initialize Feature Extractors - ViT Models"]
-    J --> K["Initialize Classifiers - Sklearn"]
-    K --> L["Extract Features from Full Train and Test Datasets"]
-    L --> M[("Store Extracted Features")]
-    M --> N["Start K-Fold Cross-Validation on Training Data"]
-    N --> O{"For Each Extractor"}
-    O --> P{"For Each Fold"} & Y["Analyze K-Fold Results"]
-    P --> Q["Split Data into Train/Validation for Fold"] 
-    Q --> R{"For Each Classifier"} 
-    R --> S{"For Each Hyperparameter Combination"} & P
-    S --> T["Initialize Classifier with Params"] & R
-    T --> U["Train Classifier on Fold Train Data"]
-    U --> V["Predict on Fold Validation Data"]
-    V --> W["Evaluate Metrics"]
-    W --> X[("Store K-Fold Results")]
-    X --> S
-    Y --> Z["Select Best Hyperparameters per Classifier/Extractor"]
-    Z --> AA["Start Final Evaluation on Test Set"]
-    AA --> BB{"For Each Extractor"}
-    BB --> CC{"For Each Classifier"} & LL["Display All Final Test Results"]
-    CC --> DD["Retrieve Best Params from K-Fold"] & BB
-    DD --> EE{"Are Best Params Valid?"}
-    EE -- No --> FF["Skip Final Test for this Classifier"] 
-    EE -- Yes --> GG["Initialize Classifier with Best Params"]
-    GG --> HH["Train Classifier on Full Train Data"]
-    HH --> II["Predict on Full Test Data"]
-    II --> JJ["Evaluate Test Set Metrics"]
-    JJ --> KK[("Store Final Test Results")]
-    KK --> CC
-    LL --> MM["Identify and Display Overall Best Result"]
-    MM --> NNN(("End"))
-```
+graph TD
+    %% Subgraph: Inicialização e Carregamento de Dados
+    subgraph A[Configuração e Preparação de Dados]
+        A0(Início do Pipeline) --> A1[Definir Hiperparâmetros de Classificadores]
+        A1 --> A2[Configurar Dispositivo GPU/CPU]
+        A2 --> A3[Definir Transformações para Imagens]
+        A3 --> A4[Clonar Repositório do Dataset CTCB]
 
-```mermaid
-graph LR
-    A[Dataset de Imagens CTCB] --> B{Carregar e Dividir Dataset};
-    B --> C[Transformações de Imagem];
-    C --> D{Extratores ViT DINO, ViT-Base, ViT-Large};
-    D --> E[Extrair Features X_train_full, y_train_full, X_test_full, y_test_full];
-
-    subgraph "Otimização e Treinamento"
-        E --> F{Validação Cruzada K-Fold em X_train_full};
-        F -- Para cada Extrator, Classificador, Hiperparâmetro --> G[Treinar Classificador no Fold de Treino];
-        G --> H[Validar no Fold de Validação];
-        H --> I[Calcular Métricas Acurácia Balanceada];
-        I --> J{Selecionar Melhores Hiperparâmetros por Extrator, Classificador};
+        A4 --> A5{Diretório 'Test' Existe?}
+        A5 -- Sim --> A6[Carregar Datasets de Treino e Teste separados]
+        A5 -- Não --> A7[Carregar Dataset Completo diretório 'Train']
+        A7 --> A8[Dividir Dataset em Treino/Teste Stratificado]
+        A8 --> A6
+        A6 --> A9[Verificar Classes e Criar DataLoaders]
     end
 
-    J --> K[Treinar Classificador Final com Melhores Hiperparâmetros em X_train_full completo];
-    K --> L[Avaliar no Conjunto de Teste X_test_full, y_test_full];
-    L --> M[Gerar Métricas Finais, Matriz de Confusão, TP/TN/FP/FN];
-    M --> N[Identificar Melhor Modelo Geral];
-    N --> O[Salvar Relatório Detalhado];
-
-    classDef dataset fill:#933,stroke:#333,stroke-width:2px;
-    classDef process fill:#c3c,stroke:#333,stroke-width:2px;
-    classDef decision fill:#339,stroke:#333,stroke-width:2px;
-    classDef output fill:#99f,stroke:#333,stroke-width:2px;
-
-    class A,B,C,E dataset;
-    class D,F,G,H,K,L,M,N,O process;
-    class I,J decision;
-```
-
-```mermaid
-flowchart LR
-    subgraph DS["Preparando Dataset"]
-        DS0[("baixa dataset")]-->
-        TT0["configura transformação"]-->DS1
-        
-        DS1{"possui train/test?"}-- Sim -->
-        DS2[carrega train<br>carrega test]
-        DS3[estratifica:<li>80% train<li>20% test]
-        DS1-- Nao -->DS3
-        TT1[otimiza imagens para ViT]
-        DS2 & DS3 --> TT1-->
-        DS4[X_train_full, y_train_full, X_test_full, y_test_full]
+    %% Subgraph: Extração de Características
+    subgraph B[Extração de Características ViT]
+        A9 --> B0[Inicializar Extratores de Características ViT DINO, ViT-Base, ViT-Large]
+        B0 --> B1{Para Cada Extrator ViT}
+        B1 --> B5(Características Extraídas Prontas)
+        B1 --> B2[Extrair Características de Imagens do Conjunto de Treino COMPLETO X_train_full, y_train_full]
+        B2 --> B3[Extrair Características de Imagens do Conjunto de Teste COMPLETO X_test_full, y_test_full]
+        B3 --> B4[Armazenar Características Extraídas]
+        B4 --> B1
     end
 
-    subgraph FE["Instanciando Extratores"]
-        FE0[inicializa extratores]-->
-        FE1{carrega extrator}
-        FE2[extrair caracteristicas de X_train_full, y_train_full, X_test_full, y_test_full]
-        FE1--> FE2 -->FE1
+    %% Subgraph: Validação Cruzada K-Fold para Otimização de Hiperparâmetros
+    subgraph C[Validação Cruzada K-Fold]
+        B5 --> C0[Inicializar KFold 5 Folds, embaralhado]
+        C1 --> C10(Resultados K-Fold Coletados)
+        C0 --> C1{Para Cada Extrator de Características}
+        C1 --> C2{Para Cada Fold Treino/Validação do Conjunto de Treino COMPLETO}
+        C2 --> C3[Dividir Características de Treino em Fold de Treino e Fold de Validação]
+        C3 --> C4{Para Cada Tipo de Classificador SVM, MLP, RF, KNN}
+        C4 --> C5{Para Cada Combinação de Hiperparâmetros}
+        C5 --> C6[Instanciar Classificador com Parâmetros Atuais]
+        C6 --> C7[Treinar Classificador no Fold de Treino]
+        C7 --> C8[Fazer Previsões no Fold de Validação]
+        C8 --> C9[Avaliar Métricas Acurácia Ponderada, Precisão, Recall, F1, CM e Armazenar Resultados]
+        C9 --> C5
+        C5 --> C4
+        C4 --> C2
+        C2 --> C1
     end
 
-    subgraph KF[Validação Cruzada]
-        KF0[instancia classificadores]-->
-        KF1{extrator}-->
-        KF2{fold < 5}-->
-        KF3{inicia classificador}-->
-        KF4{define hiperparametro}-->
-        KF5[treina no fold]
-        KF6[valida no fold]-->
-        KF7[calcula metricas]
-
-        KF2-->KF1
-        KF3-->KF2
-        KF4-->KF3
-        KF5-->KF6-->KF4
-         
+    %% Subgraph: Seleção de Hiperparâmetros
+    subgraph D[Seleção dos Melhores Hiperparâmetros]
+        C10 --> D0[Aggregar Resultados K-Fold Média das Métricas por Extrator/Classificador/Parâmetro]
+        D0 --> D1[Selecionar Melhores Hiperparâmetros com Base na Média da Acurácia Ponderada por Amostra]
+        D1 --> D2(Melhores Modelos por Extrator/Classificador Definidos)
     end
 
-    subgraph OR[Otimização e Resultados]
-        OR0[selecionar melhores Hiperparâmetros por Extrator, Classificador]-->
-        OR1[Treinar Classificador Final com Melhores Hiperparâmetros em X_train_full]-->
-        OR2[Avaliar no Conjunto de Teste X_test_full, y_test_full]-->
-        OR3[Gerar Métricas Finais, Matriz de Confusão, TP/TN/FP/FN]-->
-        OR4[dentificar Melhor Modelo Geral]-->
-        OR5[(Salvar Relatório Detalhado)]
+    %% Subgraph: Avaliação Final no Conjunto de Teste
+    subgraph E[Avaliação Final no Teste]
+        D2 --> E0{Para Cada Extrator de Características}
+        E0 --> E7(Avaliação Final Concluída)
+        E0 --> E1{Para Cada Tipo de Classificador}
+        E1 --> E2[Recuperar Melhores Parâmetros Selecionados]
+        E2 --> E3[Instanciar Classificador com Melhores Parâmetros]
+        E3 --> E4[Treinar Classificador no Conjunto de Treino COMPLETO X_train_full, y_train_full]
+        E4 --> E5[Fazer Previsões no Conjunto de Teste X_test_full]
+        E5 --> E6[Avaliar Métricas Finais Acurácia Ponderada, Precisão, Recall, F1, CM e Armazenar Resultados]
+        E6 --> E1
+        E1 --> E0
     end
 
-    DS==>FE==>KF==>OR
+    %% Subgraph: Exibição e Salvamento de Resultados
+    subgraph F[Exibição e Salvamento de Resultados]
+        E7 --> F0[Exibir Detalhes dos Resultados Finais no Console]
+        F0 --> F1[Plotar Matrizes de Confusão para Cada Modelo Avaliado]
+        F1 --> F2[Identificar e Exibir o Melhor Modelo Geral `Baseado na Acurácia Ponderada no Teste`]
+        F2 --> F3[Salvar Todos os Resultados em 'evaluation_results.txt']
+        F3 --> F4(Fim do Pipeline)
+    end
 ```
