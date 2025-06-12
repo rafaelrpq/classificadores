@@ -86,3 +86,9 @@ graph TD
         F3 --> F4(Fim do Pipeline)
     end
 ```
+
+
+- [ ] explicar fcnn
+- [ ] reprodizir fcnn
+- [ ] fine tuning ??
+- [ ] https://huggingface.co/docs/transformers/model_doc/mobilevit
