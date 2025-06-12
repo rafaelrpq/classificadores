@@ -113,9 +113,9 @@ style : |
 *   **A Classe `FeatureExtractor`:**
     *   **Propósito:** Carregar um modelo ViT pré-treinado e utilizá-lo para converter imagens em vetores numéricos de alta dimensão (características).
     *   **Modelos Utilizados:**
-        *   `facebook/dino-vitb8` (DINO)
-        *   `google/vit-base-patch16-224` (ViT-Base)
-        *   `google/vit-large-patch16-224` (ViT-Large)
+        -   `facebook/dino-vitb8` (DINO)
+        -   `google/vit-base-patch16-224` (ViT-Base)
+        -   `google/vit-large-patch16-224` (ViT-Large)
     *   **Modo de Avaliação (`.eval()`):** Garante que o modelo se comporta corretamente durante a inferência.
 *   **Processo de Extração:**
     *   Itera sobre o `dataloader`.
@@ -130,7 +130,7 @@ style : |
 *   **Objetivo:** Fornecer uma avaliação abrangente do desempenho do classificador, com atenção especial a datasets desbalanceados.
 *   **Métricas Chave:**
     *   **Acurácia Ponderada por Amostra:**
-        *   **NOVIDADE:** Calcula pesos para cada amostra com base na frequência inversa da classe (classes minoritárias recebem mais peso).
+        *   Calcula pesos para cada amostra com base na frequência inversa da classe (classes minoritárias recebem mais peso).
         *   Isso substitui a acurácia balanceada e dá mais importância ao desempenho em classes com menos amostras.
     *   **Métricas de Média (Macro e Weighted):**
         *   `Precisão`, `Recall`, `F1-Score` (Macro e Weighted): Essenciais para entender o desempenho por classe e o desempenho geral ponderado.
@@ -152,7 +152,7 @@ style : |
     *   Para cada fold:
         *   Um subconjunto é usado para treino e outro para validação.
         *   **Treinamento de Classificadores de ML:** Cada classificador (SVC, MLP, RandomForest, KNN) é treinado com diferentes combinações de hiperparâmetros.
-        *   **Avaliação no Fold de Validação:** O desempenho é medido usando a `acurácia ponderada por amostra` e outras métricas.
+        *   **Avaliação no Fold de Validação:** O desempenho é medido usando principalmente pela `acurácia ponderada por amostra`
     *   **Objetivo:** Avaliar a robustez dos hiperparâmetros e selecionar os melhores.
 
 ---

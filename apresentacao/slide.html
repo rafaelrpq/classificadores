@@ -505,7 +505,7 @@ code {
 </li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="11" data-class="invert" data-theme="default" data-style="html {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="8" data-class="invert" data-theme="default" data-style="html {
     font-size: 62.5%;
 }
 section {
@@ -597,22 +597,22 @@ code {
 <li data-marpit-fragment="2"><strong>Propósito:</strong> Carregar um modelo ViT pré-treinado e utilizá-lo para converter imagens em vetores numéricos de alta dimensão (características).</li>
 <li data-marpit-fragment="3"><strong>Modelos Utilizados:</strong>
 <ul>
-<li data-marpit-fragment="4"><code>facebook/dino-vitb8</code> (DINO)</li>
-<li data-marpit-fragment="5"><code>google/vit-base-patch16-224</code> (ViT-Base)</li>
-<li data-marpit-fragment="6"><code>google/vit-large-patch16-224</code> (ViT-Large)</li>
+<li><code>facebook/dino-vitb8</code> (DINO)</li>
+<li><code>google/vit-base-patch16-224</code> (ViT-Base)</li>
+<li><code>google/vit-large-patch16-224</code> (ViT-Large)</li>
 </ul>
 </li>
-<li data-marpit-fragment="7"><strong>Modo de Avaliação (<code>.eval()</code>):</strong> Garante que o modelo se comporta corretamente durante a inferência.</li>
+<li data-marpit-fragment="4"><strong>Modo de Avaliação (<code>.eval()</code>):</strong> Garante que o modelo se comporta corretamente durante a inferência.</li>
 </ul>
 </li>
-<li data-marpit-fragment="8"><strong>Processo de Extração:</strong>
+<li data-marpit-fragment="5"><strong>Processo de Extração:</strong>
 <ul>
-<li data-marpit-fragment="9">Itera sobre o <code>dataloader</code>.
+<li data-marpit-fragment="6">Itera sobre o <code>dataloader</code>.
 <ul>
-<li data-marpit-fragment="10"><strong>Captura do CLS Token:</strong> O primeiro token de saída do ViT é utilizado como vetor de características.</li>
+<li data-marpit-fragment="7"><strong>Captura do CLS Token:</strong> O primeiro token de saída do ViT é utilizado como vetor de características.</li>
 </ul>
 </li>
-<li data-marpit-fragment="11"><strong>Resultados em NumPy</strong>: As características são convertidas para arrays NumPy para uso pelos classificadores de ML.</li>
+<li data-marpit-fragment="8"><strong>Resultados em NumPy</strong>: As características são convertidas para arrays NumPy para uso pelos classificadores de ML.</li>
 </ul>
 </li>
 </ul>
@@ -709,7 +709,7 @@ code {
 <ul>
 <li data-marpit-fragment="3"><strong>Acurácia Ponderada por Amostra:</strong>
 <ul>
-<li data-marpit-fragment="4"><strong>NOVIDADE:</strong> Calcula pesos para cada amostra com base na frequência inversa da classe (classes minoritárias recebem mais peso).</li>
+<li data-marpit-fragment="4">Calcula pesos para cada amostra com base na frequência inversa da classe (classes minoritárias recebem mais peso).</li>
 <li data-marpit-fragment="5">Isso substitui a acurácia balanceada e dá mais importância ao desempenho em classes com menos amostras.</li>
 </ul>
 </li>
@@ -828,7 +828,7 @@ code {
 <ul>
 <li data-marpit-fragment="7">Um subconjunto é usado para treino e outro para validação.</li>
 <li data-marpit-fragment="8"><strong>Treinamento de Classificadores de ML:</strong> Cada classificador (SVC, MLP, RandomForest, KNN) é treinado com diferentes combinações de hiperparâmetros.</li>
-<li data-marpit-fragment="9"><strong>Avaliação no Fold de Validação:</strong> O desempenho é medido usando a <code>acurácia ponderada por amostra</code> e outras métricas.</li>
+<li data-marpit-fragment="9"><strong>Avaliação no Fold de Validação:</strong> O desempenho é medido usando principalmente pela <code>acurácia ponderada por amostra</code></li>
 </ul>
 </li>
 <li data-marpit-fragment="10"><strong>Objetivo:</strong> Avaliar a robustez dos hiperparâmetros e selecionar os melhores.</li>
