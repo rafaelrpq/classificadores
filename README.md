@@ -14,6 +14,17 @@ Os scripts gerados são do tipo Jupyter Notebook e foram executados no Google Co
 - classificadores_metricas_ponderadas.ipynb apresenta o metodo de classificação usando o conjunto de imagens originais.
 - classificadores_metricas_ponderadas_preprocessado.ipynb apresenta o metodo de classificação usando o conjunto de imagens preprocessadas, tendo suas dimensões rearranjadas a fim de deixar altura e largura proporcionais gerando uma imagem quadarada.
 
+```mermaid
+flowchart LR
+    B[("base de<br>imagens")] ==> E["extrator de<br>caracteristicas"]
+    E ==> V["vetores de<br>caracteristicas"]
+    V ==> C["classificador"]
+    C -.-> c1["Classe A"] & c2["Classe B"] & n1["..."] & cN["Classe N"]
+
+    V@{ shape: procs}
+    n1@{ shape: text}
+```
+
 ### Análise dos Resultados de Avaliação do Modelo
 
 A seguir, apresento as tabelas com os resultados de performance dos modelos de classificação de imagens, baseadas nos arquivos `evaluation_results.txt` e `evaluation_results_preprocessed.txt`. As tabelas sumarizam a performance de diferentes combinações de extratores de características, classificadores e seus respectivos hiperparâmetros.
