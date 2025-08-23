@@ -15,6 +15,12 @@ Os scripts gerados são do tipo Jupyter Notebook e foram executados no Google Co
 - classificadores_metricas_ponderadas_preprocessado.ipynb apresenta o metodo de classificação usando o conjunto de imagens preprocessadas, tendo suas dimensões rearranjadas a fim de deixar altura e largura proporcionais gerando uma imagem quadarada.
 
 ```mermaid
+---
+config:
+  look: handDrawn
+  theme: mc
+---
+
 flowchart LR
     B[("base de<br>imagens")] ==> E["extrator de<br>caracteristicas"]
     E ==> V["vetores de<br>caracteristicas"]
